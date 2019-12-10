@@ -444,7 +444,8 @@
           Email: vm.Email,
           FechaVencimiento: fechaVigenciaAux,
           IdClabe: IdClabe,
-          id_UsoCFDI: vm.CDFI ? vm.CDFI.id_UsoCFDI : ""
+          id_UsoCFDI: vm.CDFI ? vm.CDFI.id_UsoCFDI : "",
+          Clv_Usuario: $localStorage.currentUser.usuario
         }
       };
       corporativoFactory.updateContrato(contrato).then(function (data) {
