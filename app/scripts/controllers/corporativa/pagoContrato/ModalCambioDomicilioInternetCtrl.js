@@ -74,8 +74,8 @@ angular
 											'Longitud': vm.longitud,
 											'IdProveedorNew': vm.ValidaCoordenadas.IdProveedorNew,
 											'Id_beam_paqueteNew': vm.ValidaCoordenadas.Id_beam_paqueteNew,
-											'CambiaSAN': vm.ValidaCoordenadas.CambiaSAN//,
-											//'CambiaServicio': vm.ValidaCoordenadas.CambiaServicio
+											'CambiaSAN': vm.ValidaCoordenadas.CambiaSAN,
+											'CambiaServicio': vm.ValidaCoordenadas.CambiaServicio
 										}
 									};
 									ContratoMaestroFactory.GetNUECAMDOFACnoInt(paramAddCAMDO).then(function (data) {
@@ -104,8 +104,9 @@ angular
 										'Latitud': vm.latitud,
 										'Longitud': vm.longitud,
 										'IdProveedorNew': vm.ValidaCoordenadas.IdProveedorNew,
-										'Id_beam_paqueteNew': vm.ValidaCoordenadas.Id_beam_paqueteNew//,
-										//'CambiaSAN': vm.ValidaCoordenadas.CambiaSAN
+										'Id_beam_paqueteNew': vm.ValidaCoordenadas.Id_beam_paqueteNew,
+										'CambiaSAN': vm.ValidaCoordenadas.CambiaSAN,
+										'CambiaServicio': vm.ValidaCoordenadas.CambiaServicio
 									}
 								};
 								ContratoMaestroFactory.GetNUECAMDOFACnoInt(paramAddCAMDO).then(function (data) {
