@@ -13,6 +13,7 @@ angular
 			//return 'http://192.168.50.122:3000/SoftvWCFService.svc';
 			//return 'http://192.168.50.125:8085/SoftvWCFService.svc';
 			//return 'http://localhost:64481/SoftvWCFService.svc';
+			return 'http://192.168.50.175:8085/SoftvWCFService.svc';
 		};
 
 		svc.getUrlReportes = function () {
@@ -21,6 +22,7 @@ angular
 			//return 'http://192.168.50.122:3000/';
 			//return 'http://192.168.50.125:8085/';
 			//return 'http://localhost:64481/';
+			return 'http://192.168.50.175:8085/';
 		};
 
 		svc.getUrlMizar = function () {

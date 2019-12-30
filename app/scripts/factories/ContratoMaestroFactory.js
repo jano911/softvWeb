@@ -70,7 +70,9 @@ angular.module('softvApp')
       GetCancelacion_Factura_CFDMaestro: '/FacturacionSoftv/GetCancelacion_Factura_CFDMaestro',
       GetValidaCoordenadasCAMDO: '/CAMDOFAC/GetValidaCoordenadasCAMDO',
       GetNUECAMDOFACnoInt: '/CAMDOFAC/GetNUECAMDOFACnoInt',
-      GetUsoCFDI:'/ContratoMaestroFac/GetUsoCFDI', 
+      GetUsoCFDI:'/ContratoMaestroFac/GetUsoCFDI',
+      GetUsoCFDI_NC:'/ContratoMaestroFac/GetUsoCFDI_NC', 
+      GetFormaPago:'/ContratoMaestroFac/GetFormaPago', 
       GetDetallePagos:'/RelacionIngresosMaestro/GetDetallePagos',
       GetDetalleContratoPrefactura:'/BuscaFacturasFisca/GetDetalleContratoPrefactura',
       GetDetalleContratoPrefacturaExcel:'/BuscaFacturasFisca/GetDetalleContratoPrefacturaExcel',
@@ -349,6 +351,37 @@ angular.module('softvApp')
       return deferred.promise; 
     }; 
 
+    factory.GetUsoCFDI_NC = function () { 
+      var deferred = $q.defer(); 
+      var config = { 
+        headers: { 
+          'Authorization': $localStorage.currentUser.token 
+        } 
+      }; 
+      $http.get(globalService.getUrl() + paths.GetUsoCFDI_NC, config).then(function (response) { 
+ 
+        deferred.resolve(response.data); 
+      }).catch(function (response) { 
+        deferred.reject(response); 
+      }); 
+      return deferred.promise; 
+    }; 
+
+    factory.GetFormaPago = function () { 
+      var deferred = $q.defer(); 
+      var config = { 
+        headers: { 
+          'Authorization': $localStorage.currentUser.token 
+        } 
+      }; 
+      $http.get(globalService.getUrl() + paths.GetFormaPago, config).then(function (response) { 
+ 
+        deferred.resolve(response.data); 
+      }).catch(function (response) { 
+        deferred.reject(response); 
+      }); 
+      return deferred.promise; 
+    }; 
 
     factory.GetNUECAMDOFACnoInt = function (parametros) {
       var deferred = $q.defer();

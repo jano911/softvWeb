@@ -33,6 +33,15 @@
       ContratoMaestroFactory.StatusNotadeCredito().then(function (data) {
         vm.StatusList = data.GetStatusNotadeCreditoListResult;
         vm.StatusList.Clv_Status = "A";
+
+        ContratoMaestroFactory.GetUsoCFDI_NC().then(function (data) {
+          vm.listaCDFI_NC = data.GetUsoCFDI_NCResult;
+
+          ContratoMaestroFactory.GetFormaPago().then(function (data) {
+            vm.listaFormaPago = data.GetFormaPagoResult;
+            
+          });
+        });
       });
     }
 
@@ -279,6 +288,8 @@
         vm.NSucursal = data.GetObtieneDatosTicketListResult.Sucursal[0].NOMBRE;
         vm.Cajero = data.GetObtieneDatosTicketListResult.Cajero;
         vm.usuario = $localStorage.currentUser.usuario
+        //vm.FormaPagoSelected = {id_FormaPago:'02', Descripcion: '02 - Chueque Normativo'};
+        vm.FormaPagoSelected = data.GetObtieneDatosTicketListResult.FormaPago[0];
         ContratoMaestroFactory.DetalleContratosFM(vm.factura.CLV_FACTURA).then(function (result) {
           vm.clv_session = result.GetDetalleContratosFMListResult.ListaDos[0].Clv_Session;
           vm.contratos = result.GetDetalleContratosFMListResult.ListaUno;
@@ -303,7 +314,7 @@
         ngNotify.set('No puede guardar una nota de crédito con un monto $0.00 ', 'error');
         return;
       }
-      if (vm.sumatotal > (vm.factura.Monto - vm.factura.TotalAbonado)){
+      if (vm.sumatotal > (vm.factura.Monto - vm.factura.TotalAbonado)) {
         ngNotify.set('El total de la nota de crédito no puede exceder del saldo pendiente de la factura seleccionada.', 'error');
         return;
       }
@@ -321,6 +332,8 @@
         'Clv_suc_aplica': $localStorage.currentUser.sucursal,
         'Caja': vm.clvcaja,
         'Contrato_Aplicar': 0,
+        'id_UsoCFDI': vm.CDFI.id_UsoCFDI,
+        'id_FormaPago': vm.FormaPago.id_FormaPago
       }
       if (vm.AplicadaAFactura) {
         obj.Tipo = 1;
