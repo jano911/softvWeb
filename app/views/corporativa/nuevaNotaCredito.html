@@ -145,6 +145,30 @@
                 ng-model="$ctrl.Observaciones" required-message="'Este campo es obligatorio.'" required></textarea>
             </div>
           </div>
+          
+          <div class="col-md-12">
+            <label class="col-md-3 control-label blod">Uso CDFI:</label>
+            <div class="col-md-9" style="padding-left:-10px;">
+  
+              <select class="form-control input-sm" name="CDFI" ng-model="$ctrl.CDFI" ng-options="item as item.Descripcion for item in $ctrl.listaCDFI_NC track by item.id_UsoCFDI"
+              required-message="'Este campo es obligatorio.'" required>
+                <option value="">Selecciona</option>
+              </select>
+  
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label class="col-md-3 control-label blod">Forma de Pago:</label>
+            <div class="col-md-9" style="padding-left:-10px;">
+  
+              <select class="form-control input-sm" name="FormaPago" ng-model="$ctrl.FormaPagoSelected" ng-options="item as item.Descripcion for item in $ctrl.listaFormaPago track by item.id_FormaPago"
+              required-message="'Este campo es obligatorio.'" required>
+                <option value="">Selecciona</option>
+              </select>
+  
+            </div>
+          </div>
           <!--<div class="col-md-12">
             <br>
             <label class="col-md-3 control-label blod">Nota de Crédito Aplicada a una Factura:</label>
