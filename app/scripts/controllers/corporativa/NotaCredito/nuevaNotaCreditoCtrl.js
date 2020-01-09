@@ -36,7 +36,7 @@
 
         ContratoMaestroFactory.GetUsoCFDI_NC().then(function (data) {
           vm.listaCDFI_NC = data.GetUsoCFDI_NCResult;
-
+          vm.CDFI = vm.listaCDFI_NC[0];
           ContratoMaestroFactory.GetFormaPago().then(function (data) {
             vm.listaFormaPago = data.GetFormaPagoResult;
             

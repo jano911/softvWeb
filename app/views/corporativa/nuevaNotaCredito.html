@@ -22,12 +22,13 @@
             Contrato maestro
           </div>
           <div class="col-md-4">
-            <input type="number" class="form-control input-sm" name="ContratoMaestro" placeholder="No.Contrato" ng-model="$ctrl.Contrato"
-              ng-keypress="$ctrl.enter($event)">
+            <input type="number" class="form-control input-sm" name="ContratoMaestro" placeholder="No.Contrato"
+              ng-model="$ctrl.Contrato" ng-keypress="$ctrl.enter($event)">
           </div>
           <div class="col-md-4">
 
-            <button class="btn ink-reaction btn-floating-action btn-sm btn-default" name="Buscar" ng-click="$ctrl.abrirContratos()" type="button">
+            <button class="btn ink-reaction btn-floating-action btn-sm btn-default" name="Buscar"
+              ng-click="$ctrl.abrirContratos()" type="button">
               <i class="fa fa-search"></i>
             </button>
           </div>
@@ -37,7 +38,8 @@
           <b class="text-danger"> Estatus</b>
         </div>
         <div class="col-md-3" ng-show="$ctrl.MuestraDet">
-          <select ng-model="$ctrl.Status" ng-disabled="true" name="EstatusNota" class="form-control input-sm" ng-options="item as item.Status for item in $ctrl.StatusList track by item.Clv_Status">
+          <select ng-model="$ctrl.Status" ng-disabled="true" name="EstatusNota" class="form-control input-sm"
+            ng-options="item as item.Status for item in $ctrl.StatusList track by item.Clv_Status">
             <option value="" selected>Activa</option>
           </select>
         </div>
@@ -61,7 +63,8 @@
 
             <label class="col-md-3 control-label blod">Nombre Comercial:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="NombreComercial" class="form-control input-sm" ng-value="$ctrl.DetalleContrato.NombreComercial">
+              <input type="text" ng-disabled="true" name="NombreComercial" class="form-control input-sm"
+                ng-value="$ctrl.DetalleContrato.NombreComercial">
 
             </div>
           </div>
@@ -70,7 +73,8 @@
 
             <label class="col-md-3 control-label blod">Razón social:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="RazonSocial" class="form-control input-sm" ng-value="$ctrl.DetalleContrato.RazonSocial">
+              <input type="text" ng-disabled="true" name="RazonSocial" class="form-control input-sm"
+                ng-value="$ctrl.DetalleContrato.RazonSocial">
 
             </div>
           </div>
@@ -78,7 +82,8 @@
 
             <label class="col-md-3 control-label blod">RFC:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="RFC" class="form-control input-sm" ng-value="$ctrl.DetalleContrato.RFC">
+              <input type="text" ng-disabled="true" name="RFC" class="form-control input-sm"
+                ng-value="$ctrl.DetalleContrato.RFC">
 
             </div>
           </div>
@@ -86,7 +91,8 @@
 
             <label class="col-md-3 control-label blod">Distribuidor:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="Distribuidor" class="form-control input-sm" ng-value="$ctrl.DetalleContrato.DistribuidorDes">
+              <input type="text" ng-disabled="true" name="Distribuidor" class="form-control input-sm"
+                ng-value="$ctrl.DetalleContrato.DistribuidorDes">
 
             </div>
           </div>
@@ -102,8 +108,9 @@
             <br>
             <label class="col-md-3 control-label blod">Ticket:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <select class="form-control input-sm" ng-model="$ctrl.factura" name="ticket" required ng-change="$ctrl.cambioFactura()" required-message="'Este campo es obligatorio.'"
-                validate-on="dirty" ng-options="item as item.FACTURAS for item in $ctrl.facturas track by item.CLV_FACTURA">
+              <select class="form-control input-sm" ng-model="$ctrl.factura" name="ticket" required
+                ng-change="$ctrl.cambioFactura()" required-message="'Este campo es obligatorio.'" validate-on="dirty"
+                ng-options="item as item.FACTURAS for item in $ctrl.facturas track by item.CLV_FACTURA">
                 <option value="">selecciona</option>
               </select>
             </div>
@@ -111,14 +118,15 @@
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Caja:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="Caja" validate-on="dirty" class="form-control input-sm" ng-model="$ctrl.Caja"
-                required-message="'Este campo es obligatorio.'" required>
+              <input type="text" ng-disabled="true" name="Caja" validate-on="dirty" class="form-control input-sm"
+                ng-model="$ctrl.Caja" required-message="'Este campo es obligatorio.'" required>
             </div>
           </div>
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Cajero:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <select class="form-control input-sm" name="Cajero" ng-model="$ctrl.scajero" ng-options="item as item.NOMBRE for item in $ctrl.Cajero track by item.CLV_USUARIO">
+              <select class="form-control input-sm" name="Cajero" ng-model="$ctrl.scajero"
+                ng-options="item as item.NOMBRE for item in $ctrl.Cajero track by item.CLV_USUARIO">
                 <option value="">selecciona</option>
               </select>
 
@@ -127,46 +135,50 @@
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Usuario:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="Usuario" validate-on="dirty" class="form-control input-sm" ng-model="$ctrl.usuario"
-                required-message="'Este campo es obligatorio.'" required>
+              <input type="text" ng-disabled="true" name="Usuario" validate-on="dirty" class="form-control input-sm"
+                ng-model="$ctrl.usuario" required-message="'Este campo es obligatorio.'" required>
             </div>
           </div>
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Fecha Generación:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <input type="text" ng-disabled="true" name="Generacion" class="form-control input-sm" ng-model="$ctrl.FechaG">
+              <input type="text" ng-disabled="true" name="Generacion" class="form-control input-sm"
+                ng-model="$ctrl.FechaG">
             </div>
           </div>
 
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Observaciones:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-              <textarea type="text" placeholder="Observaciones" name="observaciones" validate-on="dirty" class="form-control input-sm"
-                ng-model="$ctrl.Observaciones" required-message="'Este campo es obligatorio.'" required></textarea>
+              <textarea type="text" placeholder="Observaciones" name="observaciones" validate-on="dirty"
+                class="form-control input-sm" ng-model="$ctrl.Observaciones"
+                required-message="'Este campo es obligatorio.'" required></textarea>
             </div>
           </div>
-          
+
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Uso CDFI:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-  
-              <select class="form-control input-sm" name="CDFI" ng-model="$ctrl.CDFI" ng-options="item as item.Descripcion for item in $ctrl.listaCDFI_NC track by item.id_UsoCFDI"
-              required-message="'Este campo es obligatorio.'" required>
+
+              <select class="form-control input-sm" name="CDFI" ng-model="$ctrl.CDFI"
+                ng-options="item as item.Descripcion for item in $ctrl.listaCDFI_NC track by item.id_UsoCFDI"
+                required-message="'Este campo es obligatorio.'" required>
                 <option value="">Selecciona</option>
               </select>
-  
+
             </div>
           </div>
 
           <div class="col-md-12">
             <label class="col-md-3 control-label blod">Forma de Pago:</label>
             <div class="col-md-9" style="padding-left:-10px;">
-  
-              <select class="form-control input-sm" name="FormaPago" ng-model="$ctrl.FormaPagoSelected" ng-options="item as item.Descripcion for item in $ctrl.listaFormaPago track by item.id_FormaPago"
-              required-message="'Este campo es obligatorio.'" required>
+
+              <select class="form-control input-sm" name="FormaPago" ng-model="$ctrl.FormaPagoSelected"
+                ng-options="item as item.Descripcion for item in $ctrl.listaFormaPago track by item.id_FormaPago"
+                required-message="'Este campo es obligatorio.'" required>
                 <option value="">Selecciona</option>
               </select>
-  
+
             </div>
           </div>
           <!--<div class="col-md-12">
@@ -220,7 +232,8 @@
                       <td>{{x.ContratoCompuesto}}</td>
                       <td>{{x.Importe|currency}}</td>
                       <td>
-                        <button class="btn btn-xs btn-info" name="Detalle" type="button" ng-click="$ctrl.Detallefactura(x)">Detalle</button>
+                        <button class="btn btn-xs btn-info" name="Detalle" type="button"
+                          ng-click="$ctrl.Detallefactura(x)">Detalle</button>
                       </td>
                     </tr>
                   </tbody>
@@ -255,4 +268,4 @@
         </div>
       </div>
   </form>
-  </div>
+</div>
